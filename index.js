@@ -10,42 +10,48 @@ function init() {
         {
             type: 'input',
             name: 'Name',
-            message: '',
-        },
-        {
-            type: 'input',
-            name: 'Role',
-            message: 'Please give description for this project.',
-
+            message: 'Please enter the name of your team member.',
         },
         {
             type: 'input',
             name: 'ID',
-            message: 'What motivated your to build this app?',
+            message: 'Please enter his/her id.',
 
         },
         {
             type: 'input',
             name: 'Email',
-            message: 'How do you install your app?',
+            message: 'Enter the email of your team member.',
+
+        },
+        {
+            type: 'list',
+            name: 'Role',
+            message: 'Choose the type of role that suits the employee:',
+            choices: ['Manager', 'Engineer', 'Intern'],
         
         },
         {
             type: 'input',
             name: 'Office number',
-            message: 'How will your app be used?',
+            message: 'Please enter office number of the manager.',
         
+        },
+        {   type: 'confirm',
+            name: 'Add member',
+            message: 'Would you like to add another team member?'
+
         },
         {
             type: 'input',
             name: 'GitHub username',
-            message: 'Who would you like to give credits to in this project?',
+            message: 'Please provide the GitHub username of the engineer.',
         
         },
         {
             type: 'input',
             name: 'School',
-            message: 'What command do you use to test this app?'
+            message: 'Please'
         
         },
         {
