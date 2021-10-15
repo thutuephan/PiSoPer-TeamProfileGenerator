@@ -12,18 +12,18 @@ function init() {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'Name',
+            name: 'name',
             message: `What is the manager'name?`,
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: 'Please enter his/her id.',
 
         },
         {
             type: 'input',
-            name: 'Email',
+            name: 'email',
             message: 'Please enter the email address of the manager.',
 
         },
@@ -37,7 +37,7 @@ function init() {
     )
         .then((answers) => {
 
-            const manager = new Manager(answers.name, answers.ID, answers.Email, answers.officeNumber);
+            const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
             teamMemberArray.push(manager);
             employeeType();
         })
@@ -78,28 +78,28 @@ function addEngineer(){
     inquirer.prompt([
         {
             type: 'input',
-            name: 'Name',
+            name: 'name',
             message: 'What is the name of the engineer?',
     
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: 'What is the id of the engineer?',
         },
         {
             type: 'input',
-            name: 'Email',
+            name: 'email',
             message: 'What is the email address of the engineer?',
         },
         {
             type: 'input',
-            name: 'GitHub',
+            name: 'gitHub',
             message: 'What is gitHub username of the engineer?',
         },
     ])
     .then((answers) => {
-        const engineer = new Engineer(answers.Name, answers.ID, answers.Email, answers.GitHub);
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHub);
         teamMemberArray.push(engineer);
         employeeType();
     })
@@ -110,28 +110,28 @@ function addIntern() {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'Name',
+            name: 'name',
             message: 'What is the name of the intern?',
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: 'What is the id of the intern?',
         },
         {
             type: 'input',
-            name: 'Email',
+            name: 'email',
             message: 'What is the email address of the intern?',
         },
         {
             type: 'input',
-            name: 'SChool',
+            name: 'school',
             message: 'Which school is the intern currently attending at?',
         },
         
     ])
     .then((answers) => {
-        const intern = new Intern(answers.Name, answers.ID, answers.Email, answers.School);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         teamMemberArray.push(intern);
         employeeType();
     })
