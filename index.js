@@ -50,7 +50,7 @@ function employeeType() {
             type: 'list',
             name: 'addMember',
             message: 'What type of employee would you want to add?',
-            choices: ['Engineer', 'Intern', 'No more members'],
+            choices: ['Engineer', 'Intern'],
         },
     ])
     .then((answers) => {
@@ -65,7 +65,7 @@ function employeeType() {
                     break;
                 
                 case 'No more members':
-                    createHTML();
+                    generateHTML();
                     break;
             }
         }
@@ -135,6 +135,19 @@ function addIntern() {
         const intern = new Intern(answers.Name, answers.ID, answers.Email, answers.School);
         teamMemberArray.push(intern);
     })
+} 
+function addMember() {
+    inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'continue',
+            message: 'Would you like to add another team member?',
+        }
+    ])
+    .then(funtion(confirmRes) {
+        confirmRes.continue ? employeeType() : generateHTML()
+    })
+
     .then ((answers) => {
         const generateContent = generateHTML(answers);
         // create a function to write README file
