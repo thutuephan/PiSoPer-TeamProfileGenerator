@@ -50,7 +50,7 @@ function employeeType() {
             type: 'list',
             name: 'addMember',
             message: 'What type of employee would you want to add?',
-            choices: ['Engineer', 'Intern'],
+            choices: ['Engineer', 'Intern', 'No more members'],
         },
     ])
     .then((answers) => {
@@ -144,17 +144,17 @@ function addMember() {
             message: 'Would you like to add another team member?',
         }
     ])
-    .then(funtion(confirmRes) {
-        confirmRes.continue ? employeeType() : generateHTML()
+    .then((answers) => {
+        if(addMember) {
+            employeeType();
+        }
+        else {
+            
+        }
+
     })
 
-    .then ((answers) => {
-        const generateContent = generateHTML(answers);
-        // create a function to write README file
-        fs.writeFile('index.html', generateContent, (err) =>
-        err? console.log(err) : console.log('Successfully created an index.html file!')
-        )
-    })
+    
 }
     
 init();
