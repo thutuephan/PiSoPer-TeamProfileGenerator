@@ -74,7 +74,7 @@ function employeeType() {
 // function that makes engineer object, adds to team array, then calls employeeType() again 
     
 function addEngineer(){
-    //     inquirer.prompt(/*questions about engineer to add*/)
+    //     inquirer.prompt(questions about engineer to add)
     inquirer.prompt([
         {
             type: 'input',
@@ -104,7 +104,7 @@ function addEngineer(){
         employeeType();
     })
 }
-        /* function that makes intern object, adds to team array, then calls employeeType() again */ 
+    //   function that makes intern object, adds to team array, then calls employeeType() again 
     
 function addIntern() {
     inquirer.prompt([

@@ -1,0 +1,14 @@
+function generateHTML(answers) {
+    return `
+    
+    
+    
+    
+    
+    `
+
+
+
+
+
+}

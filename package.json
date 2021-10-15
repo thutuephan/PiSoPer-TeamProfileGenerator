@@ -20,5 +20,8 @@
   "dependencies": {
     "inquirer": "^8.2.0",
     "requirer": "0.0.4"
+  },
+  "devDependencies": {
+    "jst": "0.0.13"
   }
 }
