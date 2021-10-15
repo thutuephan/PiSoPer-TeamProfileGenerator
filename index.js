@@ -101,7 +101,7 @@ function addEngineer(){
     .then((answers) => {
         const engineer = new Engineer(answers.Name, answers.ID, answers.Email, answers.GitHub);
         teamMemberArray.push(engineer);
-    
+        employeeType();
     })
 }
         /* function that makes intern object, adds to team array, then calls employeeType() again */ 
@@ -129,48 +129,28 @@ function addIntern() {
             message: 'Which school is the intern currently attending at?',
         },
         
-
     ])
     .then((answers) => {
         const intern = new Intern(answers.Name, answers.ID, answers.Email, answers.School);
         teamMemberArray.push(intern);
+        employeeType();
     })
-} 
-function addMember() {
-    inquirer.prompt([
-        {
-            type: 'confirm',
-            name: 'continue',
-            message: 'Would you like to add another team member?',
-        }
-    ])
-    .then((answers) => {
-        if(addMember) {
-            employeeType();
-        }
-        else {
-            
-        }
-
+ 
+    .then ((answers) => {
+        const generateContent = generateHTML(answers);
+        // create a function to write README file
+        fs.writeFile('index.html', generateContent, (err) =>
+        err? console.log(err) : console.log('Successfully created an index.html file!')
+        )
     })
-
-    
 }
-    
+// Function call to initialize app
+
 init();
         
         
 
 
-// Function call to initialize app
 
 
 
-// .then ((answers) => {
-//     const generateContent = generateHTML(answers);
-// // create a function to write README file
-//     fs.writeFile('index.html', generateContent, (err) =>
-//     err? console.log(err) : console.log('Successfully created an index.html file!')
-//     );
-// }
-// )
