@@ -1,8 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require("./utils/generateHTML.js");
-
-// Create an array of questions for user input
 const teamMemberArray = [];
 
 
@@ -35,16 +33,16 @@ function init() {
     )
         .then((answers) => {
 
-            const manager = new Manager(answers.Name, answers.ID, answers.Email, answers.officeNumber);
+            const manager = new Manager(answers.name, answers.ID, answers.Email, answers.officeNumber);
             teamMemberArray.push(manager);
         })
-}
-init();
-function menu() {
+
+
+function employeeType() {
     inquirer.prompt([
         {
             type: 'list',
-            name: 'Add member',
+            name: 'addMember',
             message: 'What type of employee would you want to add?',
             choices: ['Engineer', 'Intern'],
         },
@@ -83,7 +81,7 @@ function menu() {
         {
             type: 'input',
             name: 'Email',
-            message: 'What is the email address of the engineer?',
+            message: 'What is the email address of the intern?',
         },
         {
             type: 'input',
@@ -93,11 +91,30 @@ function menu() {
 
     ])
     .then(answers => {
-        if(answers.menu) {
-            
+        if(answers.employeeType) {
+            // uses switch statement to evaluate the expression
+            switch (answers.employeeType) {
+                case 'Engineer':
+                    const engineer = new Engineer(answers.Name, answers.ID, answers.Email, answers.GitHub);
+                    teamMemberArray.push(engineer);
+                    break;
+                case 'Intern':
+                    const intern = new Intern(answers.Name, answers.ID, answers.Email, answers.School);
+                    teamMemberArray.push(intern);
+                    break;
+                default:
+                    console.log('Sorry, we need a valid statement of {employeeType}.');
+            }
+            return ;
+        }  else {
+            return
         }
     })
+
 }
+employeeType();
+}
+init();
 // Function call to initialize app
 
 
