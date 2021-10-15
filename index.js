@@ -3,7 +3,7 @@ const fs = require('fs');
 const generateHTML = require("./utils/generateHTML.js");
 const teamMemberArray = [];
 
-
+// created inquirer prompts for manager
 function init() {
     inquirer.prompt([
         {
@@ -35,22 +35,48 @@ function init() {
 
             const manager = new Manager(answers.name, answers.ID, answers.Email, answers.officeNumber);
             teamMemberArray.push(manager);
+            employeeType();
         })
+}
 
-
+// create a function asking if user wants to add more members to his team
 function employeeType() {
     inquirer.prompt([
         {
             type: 'list',
             name: 'addMember',
             message: 'What type of employee would you want to add?',
-            choices: ['Engineer', 'Intern'],
+            choices: ['Engineer', 'Intern', 'No more members'],
         },
+    ])
+    .then((answers) => {
+        if (answers.employeeType) {
+                // uses switch statement to evaluate the expression
+            switch (answers.employeeType) {
+                case 'Engineer':
+                    addEngineer();
+                     break;
+                case 'Intern':
+                    addIntern();
+                    break;
+                
+                case 'No more members':
+                    createHTML();
+                    break;
+            }
+        }
+    })
+}
+// function that makes engineer object, adds to team array, then calls employeeType() again 
+    
+function addEngineer(){
+    //     inquirer.prompt(/*questions about engineer to add*/)
+    inquirer.prompt([
         {
             type: 'input',
             name: 'Name',
             message: 'What is the name of the engineer?',
-            
+    
         },
         {
             type: 'input',
@@ -67,7 +93,17 @@ function employeeType() {
             name: 'GitHub',
             message: 'What is gitHub username of the engineer?',
         },
-        
+    ])
+    .then((answers) => {
+        const engineer = new Engineer(answers.Name, answers.ID, answers.Email, answers.GitHub);
+        teamMemberArray.push(engineer);
+    
+    })
+}
+        /* function that makes intern object, adds to team array, then calls employeeType() again */ 
+    
+function addIntern() {
+    inquirer.prompt([
         {
             type: 'input',
             name: 'Name',
@@ -88,35 +124,28 @@ function employeeType() {
             name: 'SChool',
             message: 'Which school is the intern currently attending at?',
         },
+        
 
     ])
-    .then(answers => {
-        if(answers.employeeType) {
-            // uses switch statement to evaluate the expression
-            switch (answers.employeeType) {
-                case 'Engineer':
-                    const engineer = new Engineer(answers.Name, answers.ID, answers.Email, answers.GitHub);
-                    teamMemberArray.push(engineer);
-                    break;
-                case 'Intern':
-                    const intern = new Intern(answers.Name, answers.ID, answers.Email, answers.School);
-                    teamMemberArray.push(intern);
-                    break;
-                default:
-                    console.log('Sorry, we need a valid statement of {employeeType}.');
-            }
-            return ;
-        }  else {
-            return
-        }
+    .then((answers) => {
+        const intern = new Intern(answers.Name, answers.ID, answers.Email, answers.School);
+        teamMemberArray.push(intern);
     })
-
+    .then ((answers) => {
+        const generateContent = generateHTML(answers);
+        // create a function to write README file
+        fs.writeFile('index.html', generateContent, (err) =>
+        err? console.log(err) : console.log('Successfully created an index.html file!')
+        )
+    })
 }
-employeeType();
-}
+    
 init();
-// Function call to initialize app
+        
+        
 
+
+// Function call to initialize app
 
 
 
@@ -127,4 +156,4 @@ init();
 //     err? console.log(err) : console.log('Successfully created an index.html file!')
 //     );
 // }
-// );
+// )
