@@ -1,16 +1,17 @@
 const inquirer = require('inquirer');
-const fs = require('fs'); 
-
+const fs = require('fs');
 const generateHTML = require("./utils/generateHTML.js");
 
 // Create an array of questions for user input
+const teamMemberArray = [];
+
 
 function init() {
-    inquirer.prompt ([
+    inquirer.prompt([
         {
             type: 'input',
             name: 'Name',
-            message: 'Please enter the name of your team member.',
+            message: `What is the manager'name?`,
         },
         {
             type: 'input',
@@ -21,57 +22,92 @@ function init() {
         {
             type: 'input',
             name: 'Email',
-            message: 'Enter the email of your team member.',
+            message: 'Please enter the email address of the manager.',
 
         },
         {
-            type: 'list',
-            name: 'Role',
-            message: 'Choose the type of role that suits the employee:',
-            choices: ['Manager', 'Engineer', 'Intern'],
-        
-        },
-        {
             type: 'input',
-            name: 'Office number',
+            name: 'officeNumber',
             message: 'Please enter office number of the manager.',
-        
-        },
-        {   type: 'confirm',
-            name: 'Add member',
-            message: 'Would you like to add another team member?'
 
         },
-        {
-            type: 'input',
-            name: 'GitHub username',
-            message: 'Please provide the GitHub username of the engineer.',
-        
-        },
-        {
-            type: 'input',
-            name: 'School',
-            message: 'Please'
-        
-        },
-        {
-            type: 'list',
-            name: 'License',
-            message: 'Which license is used for your app?',
-            choices: ['MIT', 'Apache2.0', 'GPL3.0'],
-        
-        },
-        
     ]
     )
-    .then ((answers) => {
-        const generateContent = generateHTML(answers);
-    // create a function to write README file
-        fs.writeFile('index.html', generateContent, (err) =>
-        err? console.log(err) : console.log('Successfully created an index.html file!')
-        );
-    }
-    );
+        .then((answers) => {
+
+            const manager = new Manager(answers.Name, answers.ID, answers.Email, answers.officeNumber);
+            teamMemberArray.push(manager);
+        })
+}
+init();
+function menu() {
+    inquirer.prompt([
+        {
+            type: 'list',
+            name: 'Add member',
+            message: 'What type of employee would you want to add?',
+            choices: ['Engineer', 'Intern'],
+        },
+        {
+            type: 'input',
+            name: 'Name',
+            message: 'What is the name of the engineer?',
+            
+        },
+        {
+            type: 'input',
+            name: 'ID',
+            message: 'What is the id of the engineer?',
+        },
+        {
+            type: 'input',
+            name: 'Email',
+            message: 'What is the email address of the engineer?',
+        },
+        {
+            type: 'input',
+            name: 'GitHub',
+            message: 'What is gitHub username of the engineer?',
+        },
+        
+        {
+            type: 'input',
+            name: 'Name',
+            message: 'What is the name of the intern?',
+        },
+        {
+            type: 'input',
+            name: 'ID',
+            message: 'What is the id of the intern?',
+        },
+        {
+            type: 'input',
+            name: 'Email',
+            message: 'What is the email address of the engineer?',
+        },
+        {
+            type: 'input',
+            name: 'SChool',
+            message: 'Which school is the intern currently attending at?',
+        },
+
+    ])
+    .then(answers => {
+        if(answers.menu) {
+            
+        }
+    })
 }
 // Function call to initialize app
-init();
+
+
+
+
+// .then ((answers) => {
+//     const generateContent = generateHTML(answers);
+// // create a function to write README file
+//     fs.writeFile('index.html', generateContent, (err) =>
+//     err? console.log(err) : console.log('Successfully created an index.html file!')
+//     );
+// }
+// );
