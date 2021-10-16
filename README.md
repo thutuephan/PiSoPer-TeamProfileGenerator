@@ -35,7 +35,7 @@ This application uses [Jest](https://www.npmjs.com/package/jest) for running the
   * [Walkthrough Video 2](https://watch.screencastify.com/v/49Ho8GTUCnOVaFIM0R78)
 
 ## Screenshot
-![myteam](https://github.com/thutuephan/PiSoPer-TeamProfileGenerator/blob/main/src/images/shot2.PNG)
+![myteam](https://github.com/thutuephan/PiSoPer-TeamProfileGenerator/blob/main/src/images/shot3.PNG)
 
 
 
