@@ -41,6 +41,11 @@ This application uses [Jest](https://www.npmjs.com/package/jest) for running the
 ## Credits
   THU PHAN  
   <br>
+  BCS Learning Assistant
+  <br>
+  Instructional Staff
+  <br>
+  Classmates
   * GitHub Repo link: https://github.com/thutuephan/PiSoPer-TeamProfileGenerator
 
   

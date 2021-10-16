@@ -120,12 +120,12 @@ function addEngineer(){
         },
         {
             type: 'input',
-            name: 'gitHub',
-            message: 'What is gitHub username of the engineer?',
+            name: 'github',
+            message: 'What is github username of the engineer?',
         },
     ])
     .then((answers) => {
-        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHub);
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         teamMemberArray.push(engineer);
         employeeType();
     })
