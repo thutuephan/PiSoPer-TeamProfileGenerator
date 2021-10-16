@@ -101,7 +101,7 @@ function internCard(intern) {
             </div>
             <div class="card-header my-2">
                 <h3 class="text-grey">${intern.name}</h3>
-                <h4 class="text-grey">Engineer</h4>
+                <h4 class="text-grey">Intern</h4>
             </div>
     
             <div class="card-body">
