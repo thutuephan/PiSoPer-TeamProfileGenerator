@@ -2,24 +2,31 @@
 const cardArray = [];
 
 function generateHTML(empArray) {
-    //switch statement here
-    switch(expression) {
-        case 1:
-            empArray[0].getRole() = 'Manager';
-            managerCard();
-
-            break;
-        case 2:
-            empArray[1].getRole() = 'Engineer';
-            engineerCard();
-            break;
-        case 3:
-            role = "Intern";
-            interCard();
-            break;
-    }
+    // wrap the switch statement in a for loop so that we can iterate through the intire array
     
-  }
+    for (let i = 0; i < empArray.length; i++) {
+    
+        //switch statement here
+        switch (empArray[i].getRole()) {
+            case empArray[0].getRole():
+                managerCard();
+                break;
+            case 2:
+                empArray[1].getRole();
+                engineerCard();
+                break;
+            case 3:
+                empArray[2].getRole();
+                internCard();
+                break;
+        }
+        cardArray.push(managerCard);
+        cardArray.push(engineerCard);
+        cardArray.push(interCard);
+
+
+    }
+}
 
 // create card for each employee type
 // create generate manager card
@@ -39,12 +46,9 @@ function managerCard(manager) {
         </div>
     </div>
     `;
-    
-    
+
+
 }
-cardArray.push(managerCard);
-cardArray.push(engineerCard);
-cardArray.push(interCard);
 
 // create engineer card
 function engineerCard(engineer) {
@@ -67,7 +71,7 @@ function engineerCard(engineer) {
 }
 
 // create intern card
-function interCard(intern) {
+function internCard(intern) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
@@ -89,7 +93,7 @@ function interCard(intern) {
 }
 
 
-function finalHTML(){
+function finalHTML() {
     return `
     
     <!DOCTYPE html>
