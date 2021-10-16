@@ -1,5 +1,6 @@
 const Employee = require('../lib/Employee');
 
+// testing Employee test using employee object
 describe('employee test', ()=> {
     describe('Initialization', ()=> {
 
@@ -34,11 +35,3 @@ describe('employee test', ()=> {
     })
 })
 
-// describe('engineer tests', () => {
-//     it('should have the correct github', () => {
-//         // test for correct github value here
-//     }) 
-//     it('should have the correct email', () => {
-//         // test for correct email value here
-//     }) 
-//  })
