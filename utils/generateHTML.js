@@ -16,16 +16,12 @@ function generateHTML(empArray) {
             case 'Engineer':
                 const engineerHTML = engineerCard(teamMember);
                 cardArray.push(engineerHTML);
-            
                 break;
             case 'Intern':
                 const internHTML = internCard(teamMember);
                 cardArray.push(internHTML);
-                
                 break;
         }
-        
-
     }
     return finalHTML();
 
@@ -68,6 +64,20 @@ function engineerCard(engineer) {
             <p class="github">GitHub: ${engineer.gitHub}</p>
         </div>
     </div>
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${engineer.name}</h3>
+                <h4>Engineer</h4><i class="fas fa-glasses"></i>
+            </div>
+
+        <div class="card-body">
+            <p class="id">ID: ${engineer.id}</p>
+            <p class="email">Email: ${engineer.email}</p>
+            <p class="github">GitHub: ${engineer.gitHub}</p>
+        </div>
+    </div>
+
 
     `;
 }
@@ -116,7 +126,7 @@ function finalHTML() {
         
         </header>
         <main>
-            <div class="container>
+            <div class="container">
                 <div class="row justify-content" id="team-card">
 
                 ${cardArray.join("")}
