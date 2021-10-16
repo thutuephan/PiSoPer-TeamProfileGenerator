@@ -19,6 +19,15 @@ function init() {
             type: 'input',
             name: 'id',
             message: 'Please enter his/her id.',
+            validate: nameInput => {
+                if(isNaN(nameInput)) {
+                    console.log('Please enter a number.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
 
         },
         {
@@ -31,6 +40,14 @@ function init() {
             type: 'input',
             name: 'officeNumber',
             message: 'Please enter office number of the manager.',
+            validate: nameInput => {
+                if(isNaN(nameInput)) {
+                    console.log('Please enter office number of the manager.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
 
         },
     ]
@@ -54,9 +71,9 @@ function employeeType() {
         },
     ])
     .then((answers) => {
-        if (answers.employeeType) {
+        if (answers.addMember) {
                 // uses switch statement to evaluate the expression
-            switch (answers.employeeType) {
+            switch (answers.addMember) {
                 case 'Engineer':
                     addEngineer();
                      break;
@@ -86,6 +103,15 @@ function addEngineer(){
             type: 'input',
             name: 'id',
             message: 'What is the id of the engineer?',
+            validate: nameInput => {
+                if(isNaN(nameInput)) {
+                    console.log('Please enter a number.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
         },
         {
             type: 'input',
@@ -117,6 +143,15 @@ function addIntern() {
             type: 'input',
             name: 'id',
             message: 'What is the id of the intern?',
+            validate: nameInput => {
+                if(isNaN(nameInput)) {
+                    console.log('Please enter a number.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
         },
         {
             type: 'input',
