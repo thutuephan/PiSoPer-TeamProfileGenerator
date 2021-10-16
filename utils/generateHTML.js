@@ -1,8 +1,19 @@
 // create a global array to add each member's card
 const cardArray = [];
-function generateHTML(cardArray){
+function generateHTML(empArray) {
     //switch statement here
-    
+    switch(employeeCard) {
+        case 1:
+            role = 'Manager';
+            break;
+        case 2:
+            role = "Engineer";
+            break;
+        case 3:
+            role = "Intern";
+            break;
+    }
+    cardArray.push(managerCard);
   
   }
 
@@ -72,3 +83,19 @@ function interCard(intern) {
 
 
 module.exports = generateHTML;
+
+// function finalHTML(){
+//     //<!DOCTYPE html>
+//    <html lang="en">
+//    <meta charset="UTF-8">
+//    <title>Page Title</title>
+//    <meta name="viewport" content="width=device-width,initial-scale=1">
+//    <link rel="stylesheet" href="">
+//    <style>
+//    </style>
+//    <script src=""></script>
+//    <body>
+   
+//      // cardArray.join("")
+   
+//    </body>}
