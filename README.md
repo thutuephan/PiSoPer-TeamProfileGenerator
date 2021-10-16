@@ -38,8 +38,6 @@ This application uses [Jest](https://www.npmjs.com/package/jest) for running the
 ![myteam](https://github.com/thutuephan/PiSoPer-TeamProfileGenerator/blob/main/src/images/Capture.PNG)
 
 
-## Screenshot
-
 
 ## Credits
   THU PHAN  
@@ -71,9 +69,10 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   
-  ## Links
+  ## URL of the GitHub repository
   Repo link containing my application code
-  https://github.com/thutuephan/Pro-README-GENERATOR
+  https://github.com/thutuephan/PiSoPer-TeamProfileGenerator
+
 
 
 
