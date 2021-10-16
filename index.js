@@ -82,7 +82,7 @@ function employeeType() {
                     break;
                 
                 case 'No more members':
-                    generateHTML();
+                    generateTeam();
                     break;
             }
         }
@@ -170,16 +170,16 @@ function addIntern() {
         teamMemberArray.push(intern);
         employeeType();
     })
- 
-    .then ((answers) => {
-        const generateContent = generateHTML(answers);
+}
+    
+// Function call to initialize app
+function generateTeam () {
+    const generateContent = generateHTML(teamMemberArray);
         // create a function to write README file
         fs.writeFile('index.html', generateContent, (err) =>
         err? console.log(err) : console.log('Successfully created an index.html file!')
         )
-    })
-}
-// Function call to initialize app
+} 
 
 init();
         

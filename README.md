@@ -12,9 +12,9 @@ This application uses [Jest](https://www.npmjs.com/package/jest) for running the
   
 
 ## Table of Contents
-  - [Description](#)
+  - [Description](#description)
   - [Installation](#installation)
-  - [Demo Links](#demo)
+  - [Demo-Links](#demo-links)
   - [Credits](#credits)
   - [Tests](#tests)
   - [License](#license)

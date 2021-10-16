@@ -3,31 +3,33 @@ const cardArray = [];
 
 function generateHTML(empArray) {
     // wrap the switch statement in a for loop so that we can iterate through the intire array
-    
+    console.log(empArray);
     for (let i = 0; i < empArray.length; i++) {
-    
+        const teamMember = empArray[i];
         //switch statement here
         switch (empArray[i].getRole()) {
-            case empArray[0].getRole():
-                managerCard();
+            case 'Manager':
+                console.log(teamMember);
+                const managerHTML = managerCard(teamMember);
+                cardArray.push(managerHTML);
                 break;
-            case 2:
-                empArray[1].getRole();
-                engineerCard();
+            case 'Engineer':
+                const engineerHTML = engineerCard(teamMember);
+                cardArray.push(engineerHTML);
+            
                 break;
-            case 3:
-                empArray[2].getRole();
-                internCard();
+            case 'Intern':
+                const internHTML = internCard(teamMember);
+                cardArray.push(internHTML);
+                
                 break;
         }
-        cardArray.push(managerCard);
-        cardArray.push(engineerCard);
-        cardArray.push(interCard);
-
+        
 
     }
-}
+    return finalHTML();
 
+}
 // create card for each employee type
 // create generate manager card
 function managerCard(manager) {
@@ -39,7 +41,7 @@ function managerCard(manager) {
                 <h4>Manager</h4><i class="fas fa-mug-hot"></i>
 
             </div>
-        <div class="card-body>
+        <div class="card-body">
             <p class="id">ID: ${manager.id}</p>
             <p class="email">Email: ${manager.email}</p>
             <p class="officenumber">Office Number: ${manager.officeNumber}</p>
@@ -60,7 +62,7 @@ function engineerCard(engineer) {
                 <h4>Engineer</h4><i class="fas fa-glasses"></i>
             </div>
 
-        <div class="card-body>
+        <div class="card-body">
             <p class="id">ID: ${engineer.id}</p>
             <p class="email">Email: ${engineer.email}</p>
             <p class="github">GitHub: ${engineer.gitHub}</p>
@@ -82,7 +84,7 @@ function internCard(intern) {
 
             </div>
 
-        <div class="card-body>
+        <div class="card-body">
             <p class="id">ID: ${intern.id}</p>
             <p class="email">Email: ${intern.email}</p>
             <p class="school">School: ${intern.school}</p>
@@ -117,7 +119,7 @@ function finalHTML() {
             <div class="container>
                 <div class="row justify-content" id="team-card">
 
-                cardArray.join("")
+                ${cardArray.join("")}
                 </div>
             </div>
     
