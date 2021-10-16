@@ -3,12 +3,9 @@ const cardArray = [];
 
 function generateHTML(empArray) {
     //switch statement here
-    if(role === 'Manager') {
-        cons
-    }
-    switch(employeeCard) {
+    switch(expression) {
         case 1:
-            role = 'Manager';
+            empArray[0].getRole();
             break;
         case 2:
             role = "Engineer";
