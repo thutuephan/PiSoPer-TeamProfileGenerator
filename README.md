@@ -5,9 +5,9 @@
   > Keep smiling and work harder
   
 ## Description
-    This is a Node.js command-line application that takes in information about employees on a software engineering team, then generate an HTML webpage that displays summaries for each person.
+This is a Node.js command-line application that takes in information about employees on a software engineering team, then generate an HTML webpage that displays summaries for each person.
 <br>
-  This application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer packages](https://www.npmjs.com/package/inquirer) for collecting input from the user.
+This application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer packages](https://www.npmjs.com/package/inquirer) for collecting input from the user.
    <br>
   
 

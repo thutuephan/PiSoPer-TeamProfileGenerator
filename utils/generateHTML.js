@@ -5,13 +5,17 @@ function generateHTML(empArray) {
     //switch statement here
     switch(expression) {
         case 1:
-            empArray[0].getRole();
+            empArray[0].getRole() = 'Manager';
+            managerCard();
+
             break;
         case 2:
-            role = "Engineer";
+            empArray[1].getRole() = 'Engineer';
+            engineerCard();
             break;
         case 3:
             role = "Intern";
+            interCard();
             break;
     }
     
