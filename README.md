@@ -34,6 +34,9 @@ This application uses [Jest](https://www.npmjs.com/package/jest) for running the
   * [Walkthrough Video 1](https://watch.screencastify.com/v/n9mxYga1dVusHMk9Caty)
   * [Walkthrough Video 2](https://watch.screencastify.com/v/49Ho8GTUCnOVaFIM0R78)
 
+## Screenshot
+![myteam]()
+
 
 ## Screenshot
 
