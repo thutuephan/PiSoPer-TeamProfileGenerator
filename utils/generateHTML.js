@@ -1,3 +1,5 @@
+const { Separator } = require("inquirer");
+
 // create a global array to add each member's card
 const cardArray = [];
 
@@ -45,7 +47,7 @@ function managerCard(manager) {
             </div>
             <div class="card-body">
                 <p class="text-grey id">ID: ${manager.id}</p>
-                <p class="text-grey email">Email: ${manager.email}</p>
+                <p class="text-grey email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
                 <p class="text-grey officenumber">Office Number: ${manager.officeNumber}</p>
             </div>
             
@@ -57,7 +59,8 @@ function managerCard(manager) {
 // create engineer card
 function engineerCard(engineer) {
     return `
-    <div class="col-lg-3 col-md-4 col-sm-3">
+       
+        <div class="col-lg-3 col-md-4 col-sm-3">
             <div class="shadow d-flex 
             justify-content-center
             align-items-center p-3 bg-light rounded-lg
@@ -73,12 +76,12 @@ function engineerCard(engineer) {
     
             <div class="card-body">
                 <p class="text-grey id">ID: ${engineer.id}</p>
-                <p class="text-grey email">Email: ${engineer.email}</p>
-                <p class="text-grey github">GitHub: ${engineer.github}</p>
+                <p class="text-grey email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="text-grey github">GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
             </div>
-
-    </div>
+        </div>
+    
             
     `;
 }
@@ -86,7 +89,8 @@ function engineerCard(engineer) {
 // create intern card
 function internCard(intern) {
     return `
-    <div class="col-lg-3 col-md-4 col-sm-3">
+      
+        <div class="col-lg-3 col-md-4 col-sm-3">
             <div class="shadow d-flex 
             justify-content-center
             align-items-center p-3 bg-light rounded-lg
@@ -102,12 +106,12 @@ function internCard(intern) {
     
             <div class="card-body">
                 <p class="text-grey id">ID: ${intern.id}</p>
-                <p class="text-grey email">Email: ${intern.email}</p>
+                <p class="text-grey email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
                 <p class="text-grey github">School: ${intern.school}</p>
             </div>
             </div>
-
-    </div>
+        
+        </div>
     
     `;
 }
@@ -131,12 +135,18 @@ function finalHTML() {
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="text-white text-center my-5">Meet My Team</h2>
-                        ${cardArray.join("")}
+                    <div class="row">
+                         ${cardArray.join("")}
+                    </div>
+
                 </div>
             </div>
+        
         </section>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
     </body>
     </html>
    `;
