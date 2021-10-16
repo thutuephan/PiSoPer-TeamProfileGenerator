@@ -1,7 +1,11 @@
 // create a global array to add each member's card
 const cardArray = [];
+
 function generateHTML(empArray) {
     //switch statement here
+    if(role === 'Manager') {
+        cons
+    }
     switch(employeeCard) {
         case 1:
             role = 'Manager';
@@ -13,8 +17,7 @@ function generateHTML(empArray) {
             role = "Intern";
             break;
     }
-    cardArray.push(managerCard);
-  
+    
   }
 
 // create card for each employee type
@@ -36,7 +39,11 @@ function managerCard(manager) {
     </div>
     `;
     
+    
 }
+cardArray.push(managerCard);
+cardArray.push(engineerCard);
+cardArray.push(interCard);
 
 // create engineer card
 function engineerCard(engineer) {
@@ -81,21 +88,38 @@ function interCard(intern) {
 }
 
 
+function finalHTML(){
+    return `
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Amazing Team Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="nav" id="navbar">
+                <span class="nav justify-content-center" id="nav-text">My Team</span>
+            </nav>
+        
+        </header>
+        <main>
+            <div class="container>
+                <div class="row justify-content" id="team-card">
 
+                cardArray.join("")
+                </div>
+            </div>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </body>
+    </html>
+   `;
+}
 module.exports = generateHTML;
 
-// function finalHTML(){
-//     //<!DOCTYPE html>
-//    <html lang="en">
-//    <meta charset="UTF-8">
-//    <title>Page Title</title>
-//    <meta name="viewport" content="width=device-width,initial-scale=1">
-//    <link rel="stylesheet" href="">
-//    <style>
-//    </style>
-//    <script src=""></script>
-//    <body>
-   
-//      // cardArray.join("")
-   
-//    </body>}
